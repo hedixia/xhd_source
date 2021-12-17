@@ -3,7 +3,7 @@ import os
 import numpy as np
 import torch
 
-from src.xhd_source.helper_func import tensor_to_np
+from .helper_func import tensor_to_np
 
 
 class Dataset:

@@ -1,7 +1,7 @@
 import torch
 import torch.nn as nn
 
-from src.xhd_source.helper_func import tensor_to_np
+from .helper_func import tensor_to_np
 
 
 class Zeronet(nn.Module):

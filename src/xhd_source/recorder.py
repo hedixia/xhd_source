@@ -2,7 +2,7 @@ import csv
 
 import numpy as np
 
-import src.xhd_source.helper_func
+import helper_func
 
 
 class Recorder:
@@ -21,7 +21,7 @@ class Recorder:
         :param value: the stored value and will be averaged when .capture() is called, type numeric
         :return: None
         """
-        value = src.xhd_source.helper_func.tensor_to_np(value)
+        value = helper_func.tensor_to_np(value)
         if key in self.current:
             self.current[key].append(value)
         else:
