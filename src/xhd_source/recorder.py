@@ -2,7 +2,7 @@ import csv
 
 import numpy as np
 
-import helper_func
+from .helper_func import tensor_to_np
 
 
 class Recorder:
@@ -21,7 +21,7 @@ class Recorder:
         :param value: the stored value and will be averaged when .capture() is called, type numeric
         :return: None
         """
-        value = helper_func.tensor_to_np(value)
+        value = tensor_to_np(value)
         if key in self.current:
             self.current[key].append(value)
         else:
