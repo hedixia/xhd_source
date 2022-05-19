@@ -1,6 +1,7 @@
 import re
 import warnings
 
+
 def get_start(full_str, char):
     assert type(char) == str
     assert len(char) == 1
@@ -78,13 +79,13 @@ class ArgumentParser:
 
             if idx not in self.default_dict:
                 # Check whether the next one in line exist and is a valid value
-                next_valid = (len(s_list) > i+1)
+                next_valid = (len(s_list) > i + 1)
                 if next_valid:
-                    next_valid = (get_start(s_list[i+1], '-') == 0)
+                    next_valid = (get_start(s_list[i + 1], '-') == 0)
 
                 if next_valid:
                     # Argument passed, treated as type=str
-                    self.argument_dict[idx] = (s_list[i+1], str)
+                    self.argument_dict[idx] = (s_list[i + 1], str)
                 else:
                     # No arguments passed, treated as store_true
                     self.argument_dict[idx] = (True, None)
@@ -95,7 +96,7 @@ class ArgumentParser:
                     # store_true / store_false mode
                     self.argument_dict[idx] = (not self.default_dict[idx][0], None)
                 else:
-                    val = s_list[i+1]
+                    val = s_list[i + 1]
                     assert get_start(val, '-') == 0
                     self.argument_dict[idx] = (arg_type(val), arg_type)
 
